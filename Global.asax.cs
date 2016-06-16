@@ -12,6 +12,10 @@ namespace wcf_ninject
 {
     public class Global : NinjectWcfApplication
     {
+        protected override IKernel CreateKernel()
+        {
+            return new StandardKernel(new WCFNinjectModule());
+        }
 
         protected void Application_Start(object sender, EventArgs e)
         {
@@ -48,9 +52,6 @@ namespace wcf_ninject
 
         }
 
-        protected override IKernel CreateKernel()
-        {
-            return new StandardKernel(new WCFNinjectModule());
-        }
+
     }
 }
