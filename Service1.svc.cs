@@ -21,7 +21,7 @@ namespace wcf_ninject
 
         public string GetData(int value)
         {
-            return string.Format("You entered: {0} _ {1}", value, _repo.CountUsers());
+            return string.Format("You entered: {0} _ {1}", value, _repo.GetCategory());
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

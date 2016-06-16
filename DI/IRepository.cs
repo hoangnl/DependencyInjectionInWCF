@@ -7,12 +7,20 @@ namespace wcf_ninject.DI
 {
     public interface IRepository
     {
-        int CountUsers();
+        int GetCategory();
     }
 
-    public class LinqToSQLRepository : IRepository
+    public class RealRepository : IRepository
     {
-        public int CountUsers()
+        public int GetCategory()
+        {
+            return 1;
+        }
+    }
+
+    public class MockRepository : IRepository
+    {
+        public int GetCategory()
         {
             return 10;
         }
@@ -20,9 +28,9 @@ namespace wcf_ninject.DI
 
     public class FakeRepository : IRepository
     {
-        public int CountUsers()
+        public int GetCategory()
         {
-            return 1000000;
+            return 100;
         }
     }
 }
